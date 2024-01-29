@@ -25,7 +25,7 @@ function App() {
 
   function Card({title , synopsis , score , image}){
     return (
-      <div className='p-3 border m-4 rounded shadow'>
+      <div className='p-3 border m-4 rounded shadow inline-block'>
       <h1 className="text-3xl text-red-500 ">{title}</h1>
       <img src={image} />
       <p>{score}</p>
