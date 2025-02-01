@@ -4,6 +4,7 @@ const cors = require('cors');
 const connectDB = require("./database/db");
 const todoRoutes = require("./routes/todoRoutes");
 
+
 app.use(cors());
 connectDB();
 
@@ -18,7 +19,6 @@ app.get("/" , (req,res)=>{
 
 app.use(express.json());
 app.use("/api" , todoRoutes)
-
 
 
 //Starting Server

@@ -1,9 +1,20 @@
 const Todo = require("../model/todoModel");
 
+let count = 0;
+let bandwidthUsed = 0;
+let cost = 0;
+
 const getAllTodo = async (req,res) => {
+   
     try{
         const todos = await Todo.find();
         res.status(200).json(todos);
+        count++;
+        bandwidthUsed += 0.00231
+        cost += 0.001 
+        console.log(`Request count : ${count}`);
+        console.log(`BandWidth used : ${bandwidthUsed.toFixed(3)} mb`);
+        console.log(`Total cost : rs ${cost.toFixed(1)} `);
     }catch(error){
         res.status(500).json({error: error.message});
     }
